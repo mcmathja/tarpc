@@ -612,6 +612,7 @@ macro_rules! service {
         impl FutureClient {
             $(
                 #[allow(unused)]
+                #[inline]
                 $(#[$attr])*
                 pub fn $fn_name(&self, $($arg: $in_),*)
                     -> impl $crate::futures::Future<Item=$out, Error=$crate::Error<$error>>
